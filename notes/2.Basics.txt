@@ -1,0 +1,7 @@
+Is a query language, not a database. Exists in a layer btn frontend and API.
+Queries an API, not a database. 
+Two types of 'requests': Query (GET), Mutation (PUT, DELETE, POST etc).
+
+Differences between GraphQL and Rest 
+- Only one endpoint : /graphql
+- Overfetching / Underfetching 

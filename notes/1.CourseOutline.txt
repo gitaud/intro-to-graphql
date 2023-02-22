@@ -1,0 +1,8 @@
+What is GraphQL
+Differences between GraphQL and REST
+How to use a GraphQL API? Example
+How to create a GraphQL API (using NodeJS)
+GraphQL Language:
+    Types, Queries, Mutations, Scalars, Enums, Unions
+How to fetch a GraphQL API from React (Apollo Client)
+    All the things you can do with Apollo Client in React

@@ -1,0 +1,45 @@
+GraphQL Playground: https://countries.trevorblades.com/
+
+Strictly typed. Primitive types: ID, String, Int, Float, Boolean. 
+Examples: 
+
+type User {
+    id: ID!
+    name: String!
+    age: Int!
+    height: Float!
+    isMarried: Boolean
+    friends: [User!] // means if they have a friend, the field must be of type User
+    videosPosted: [Video!]! // means the user must post a video, and the video must be of type Video
+}
+
+// exclamation means required. 
+
+type Video {
+    id: ID!
+    title: String!
+    description: String!
+}
+
+The API must support the graphql fetching method. Every API must have a GraphQL schema that defines all the data that will exist. 
+Every schema must have a root type called Query that defines the end point. 
+
+
+type Query {
+    users: [User]
+    user(id: ID, name: String): User 
+}
+
+or: 
+
+input UserInput {
+    id: ID
+    name: String
+}
+
+type Query {
+    users: [User]
+    user(input: UserInput): User 
+}
+
+To make a query, lay out all of the fields of a schema that you want to receive. 
