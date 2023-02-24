@@ -27,6 +27,30 @@ const resolvers = {
         (movie) => 
           movie.blueRayAvailable === false && movie.yearReleased > 2000);
     }
+  },
+  Mutation: {
+    createNewUser: (parent, args) => {
+      const newUser = {
+        name: args.input.name,
+        username: args.input.username,
+        age: Number(args.input.age),
+        nationality: args.input.nationality
+      };
+      const lastId = userList.length + 1;
+      newUser.id = lastId;
+      userList.push(newUser);
+      return newUser;
+    },
+    updateUsername: (parent, args) => {
+      const userIndex = userList.findIndex(user => user.id === Number(args.input.id));
+      userList[userIndex].username = args.input.username;
+      return userList[userIndex];
+    },
+    deleteUsername: (parent, args) => {
+      const id = args.id;
+      _.remove(userList, { id: Number(id)});
+      return userList;
+    }
   }
 }
 
